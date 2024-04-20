@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Ejercicio 3</title>
+</head>
+
+<body>
+    <div>
+        <div>
+            <h2>
+                Resultado: <span class="resultado"></span>
+            </h2>
+            <div>
+                <div>
+                    <div>
+                        <label for="">Valor 1</label>
+                        <input id="valor1" type="text">
+                    </div>
+                    <div>
+                        <label for="">Valor 2</label>
+                        <input id="valor2" type="text">
+                    </div>
+                    <div style="display: flex">
+                        <button onclick="sumar()" id="btn-sumar" type="button">
+                            Sumar
+                        </button>
+                        <button onclick="restar()" id="btn-restar" type="button">
+                            Restar
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+    // Escríbe aquí tu código
+    let datos = document.querySelectorAll('input');
+    let sumar = document.getElementById('btn-sumar');
+    let restar = document.getElementById('btn-restar');
+    let resultado = document.querySelector('.resultado');
+
+    sumar = ()=>{
+        let resultadoSuma = parseInt(datos[0].value) + parseInt(datos[1].value)
+        resultado.innerHTML = resultadoSuma;
+        limpiar()
+    }
+
+    restar = ()=>{
+        let resultadoResta = parseInt(datos[0].value) - parseInt(datos[1].value)
+        if(resultadoResta<0){
+            resultadoResta = 0
+        }
+        resultado.innerHTML = resultadoResta;
+        limpiar()
+    } 
+    
+    limpiar = ()=>{
+        datos[0].value = '';
+        datos[1].value = '';
+    }
+    </script>
+</body>
+
+</html>
